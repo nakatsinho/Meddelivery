@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meddelivery</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style class="cp-pen-styles">
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            font-size: 14px;
+        }
+        
+        body {
+            font-size: 16px;
+            height: 100%;
+        }
+        
+        .wrapper {
+            display: flex;
+            /*background-image: url('https://cdn.allwallpaper.in/wallpapers/2400x1350/926/fog-forests-landscapes-trees-2400x1350-wallpaper.jpg');*/
+            background-size: cover;
+            color: rgb(228, 133, 133);
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            text-align: center;
+        }
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        
+        .counterDown {
+            margin: auto;
+        }
+        
+        .counterDown h1 {
+            font-size: 4rem;
+            text-align: center;
+        }
+        
+        hr {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        #demo {
+            display: flex;
+            flex-direction: row;
+            font-size: 1.6rem;
+        }
+        
+        #jours {
+            font-family: "Roboto Mono", sans-serif;
+            font-size: 4rem;
+            height: 10rem;
+            margin-right: 1rem;
+            width: 8rem;
+        }
+        
+        #heures {
+            font-family: "Roboto Mono", sans-serif;
+            font-size: 4rem;
+            height: 10rem;
+            margin-right: 1rem;
+            width: 8rem;
+        }
+        
+        #minutes {
+            font-family: "Roboto Mono", sans-serif;
+            font-size: 4rem;
+            height: 10rem;
+            margin-right: 1rem;
+            width: 8rem;
+        }
+        
+        #secondes {
+            font-family: "Roboto Mono", sans-serif;
+            font-size: 4rem;
+            height: 10rem;
+            margin: auto;
+            width: 8rem;
+        }
+        
+        #infos {
+            color: rgba(126, 85, 39, 1);
+            display: flex;
+            flex-direction: row;
+            font-size: 1.6rem;
+        }
+        
+        .infos-jours {
+            font-family: "Roboto Mono", sans-serif;
+            margin-right: 1rem;
+            margin-top: -3rem;
+            width: 8rem;
+        }
+        
+        .infos-heures {
+            font-family: "Roboto Mono", sans-serif;
+            margin-right: 1rem;
+            margin-top: -3rem;
+            width: 8rem;
+        }
+        
+        .infos-minutes {
+            font-family: "Roboto Mono", sans-serif;
+            margin-right: 1rem;
+            margin-top: -3rem;
+            width: 8rem;
+        }
+        
+        .infos-secondes {
+            font-family: "Roboto Mono", sans-serif;
+            margin: auto;
+            margin-top: -3rem;
+            width: 8rem;
+        }
+    </style>
+    <!-- FIM DO TESTE DOS LINKS -->
+</head>
+
+<body class="hidden-sn mdb-skin">
+
+    <div class="wrapper">
+
+        <!-- Content -->
+        <div class="main-content">
+            <div class="counterDown text-center">
+                <h1>Lançamento Oficial</h1>
+                <hr>
+                <div id="demo">
+                    <div id="jours" class="text-center"></div>
+                    <div id="heures" class="text-center"></div>
+                    <div id="minutes" class="text-center"></div>
+                    <div id="secondes" class="text-center"></div>
+                </div>
+                <div id="infos">
+                    <div class="infos-jours">Dias</div>
+                    <div class="infos-heures">Horas</div>
+                    <div class="infos-minutes">Minutos</div>
+                    <div class="infos-secondes">Segundos</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+        var countDownDate = new Date('Nov 23, 2019 19:00:00').getTime();
+
+        var x = setInterval(function() {
+
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+            document.getElementById("jours").innerHTML = days;
+            document.getElementById("heures").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("secondes").innerHTML = seconds;
+
+
+            document.getElementById("jours").style.backgroundColor = 'rgba(126,85,39,0.2)';
+            document.getElementById("heures").style.backgroundColor = 'rgba(126,85,39,0.2)';
+            document.getElementById("minutes").style.backgroundColor = 'rgba(126,85,39,0.2)';
+            document.getElementById("secondes").style.backgroundColor = 'rgba(126,85,39,0.2)';
+
+            document.getElementById("jours").style.color = 'rgb(126,85,39)';
+            document.getElementById("heures").style.color = 'rgb(126,85,39)';
+            document.getElementById("minutes").style.color = 'rgb(126,85,39)';
+            document.getElementById("secondes").style.color = 'rgb(126,85,39)';
+
+            document.getElementById("jours").font.weight = 'bold';
+            document.getElementById("heures").font.weight = 'bold';
+            document.getElementById("minutes").font.weight = 'bold';
+            document.getElementById("secondes").font.weight = 'bold';
+
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+    <script type="text/javascript">
+        var date = new Date();
+        var annee = date.getFullYear();
+
+        document.getElementById('annee').innerHTML = annee;
+    </script>
+
+    <!--Main Layout-->
+    <script type="text/javascript" src="./Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./Scripts/popper.min.js"></script>
+    <script type="text/javascript" src="./Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Scripts/mdb.min.js"></script>
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+    </script>
+
+</body>
+
+</html>
