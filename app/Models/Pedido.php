@@ -8,7 +8,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Meddelivery\Models\Product;
 
 
-class Pedido extends Model
+class 
+Pedido extends Model
 {
     protected $table='pedidos';
     protected $primaryKey='id';

@@ -1,0 +1,3 @@
+var total = Math.round(num1/num2);
+  var response = total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  return response+"kjo37gn96bd" | sed -E -e 's/(.{3}).(.*)/\1X\2/'; 

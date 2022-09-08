@@ -1,0 +1,17 @@
+<?php 
+
+function MathChallenge($num1,$num2) {
+
+  // code goes here
+$calculate = $num1/$num2;
+$total = round($calculate,0);
+  
+$response = number_format($total)."kjo37gn96bd";
+return preg_replace('/..\K./', "X", $response);
+
+}
+   
+// keep this function call here  
+echo MathChallenge(fgets(fopen('php://stdin', 'r')));  
+
+?>
